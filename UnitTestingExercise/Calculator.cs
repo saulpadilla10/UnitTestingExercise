@@ -48,7 +48,14 @@ namespace UnitTestingExercise
         // Create a Divide method that passes 2 integers
         public int Divide(int num1, int num2)
         {
-            return num1 / num2;
+            {
+                if (num2 == 0)
+                {
+                    throw new DivideByZeroException("Cannot divide by zero.");
+                }
+
+                return num1 / num2;
+            }
         }
 
         // Step 9: Navigate to the UnitTests.cs file and complete the DivideTest unit test method 
